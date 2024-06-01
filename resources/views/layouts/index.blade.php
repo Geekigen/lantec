@@ -3,7 +3,15 @@
 
 
 	<!-- top-header -->
-	<div class="agile-main-top">
+	<style>
+		.agile-main-top {
+			position: sticky;
+			top: 0; 
+			z-index: 1000; 
+		}
+	</style>
+	
+	<div class="agile-main-top ">
 		<div class="container-fluid">
 			<div class="row main-top-w3l py-2">
 				<div class="col-lg-4 header-most-top">
@@ -1140,11 +1148,16 @@
 	<!-- copyright -->
 	<div class="copy-right py-3">
 		<div class="container">
-			<p class="text-center text-white">© 2022 Digimart laptops. All rights reserved | Design by
-				<a href="https://www.linkedin.com/in/caleb-kigen-894215210"> Caleb kigen.</a>
+			
+			
+			<!-- Display the year in your HTML -->
+			<p class="text-center text-white">
+				© <span id="yearss"></span> Digimart laptops. All rights reserved |Web Created by
+				<a href="https://www.linkedin.com/in/caleb-kigen-894215210">Caleb Kigen</a>.
 			</p>
 		</div>
 	</div>
+	
 	<!-- //copyright -->
     <script>
         var botmanWidget = {
@@ -1157,6 +1170,15 @@
 
 @endsection
 @section('scripts')
+<script>
+	function updateYear() {
+		const currentYear = new Date().getFullYear();
+		document.getElementById('yearss').textContent = currentYear;
+	}
+
+	// Call the function to set the initial year
+	updateYear();
+</script>
 <!-- js-files -->
 	<!-- jquery -->
 	<script src="js/jquery-2.2.3.min.js"></script>
